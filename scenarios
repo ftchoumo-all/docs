@@ -1,0 +1,155 @@
+Description
+1- Start to implement the automation scripts for the regression test suite
+2- Check the code in.
+
+Scope: Permission Groups scenarios below (numbers to be assigned)
+
+Permission Groups: Access and Display
+Permission Groups: Global Administrator can access the page from the Admin menu
+Permission Groups: Project Administrator cannot access the page and is denied
+Permission Groups: Regular User cannot see the menu option and is denied when opening the URL directly
+Permission Groups: Unauthenticated user is redirected to login when opening the URL
+Permission Groups: Access is revoked when the Global Administrator role is removed during an active session
+Permission Groups: Page displays the title, subtitle, Filter permissions field, Export CSV and New group buttons
+Permission Groups: Each group column shows its name, description, permission count ("X of 71") and the Edit, Duplicate and Delete icons
+Permission Groups: Project Administrator is marked as the Default group
+Permission Groups: Permissions are organized by scope (Global, Project, User) and by category
+Permission Groups: Permission rows display the permission name, description and a checkbox for every group
+Permission Groups: Permission categories can be collapsed and expanded
+Permission Groups: Long group names and descriptions are truncated or wrapped without breaking the layout
+Permission Groups: Page displays correctly in light and dark themes
+Permission Groups: System Groups
+Permission Groups: Global Administrator group has full platform-level permissions (21 of 71 as listed)
+Permission Groups: Global Standard group has the standard global-scope permission for storyline approvals (1 of 71)
+Permission Groups: Project Administrator group has full project-level permissions (45 of 71)
+Permission Groups: Project User group has standard team permissions (26 of 71)
+Permission Groups: Project Read-Only group has view-only team permissions (6 of 71)
+Permission Groups: Project Read-Only group has no create, update, delete, execute or upload permissions
+Permission Groups: Project User group has no user, team, project or integration management permissions
+Permission Groups: Project Administrator group has no platform-wide settings or global user management permissions
+Permission Groups: Permission counts shown match the number of checked permissions in each column
+Permission Groups: System groups cannot be deleted
+Permission Groups: Changes to system groups are restricted or warned about according to the design
+Permission Groups: Only one group can be marked as Default
+Permission Groups: Filter Permissions
+Permission Groups: Filter by full permission name shows the matching permission
+Permission Groups: Filter by partial permission name shows all matching permissions
+Permission Groups: Filter is case-insensitive
+Permission Groups: Filter by permission description text shows matching permissions (if supported)
+Permission Groups: Filter matches across all scopes and categories
+Permission Groups: Categories and scopes with no matching permissions are hidden
+Permission Groups: Filter with no match shows an empty state
+Permission Groups: Filter with special characters or script content causes no error and no injection
+Permission Groups: Clearing the filter restores the full matrix
+Permission Groups: Group columns and permission counts remain correct while a filter is applied
+Permission Groups: Create Group
+Permission Groups: New group opens the Create Permission Group dialog
+Permission Groups: Dialog displays Group Name (required), Description (optional), Cancel and Create Group
+Permission Groups: Group can be created with a name only
+Permission Groups: Group can be created with a name and a description
+Permission Groups: Create Group is blocked and a validation message is shown when the name is empty
+Permission Groups: Whitespace-only name is rejected
+Permission Groups: Duplicate group name is rejected (including differences in letter case)
+Permission Groups: Name and description at the maximum length are accepted, and longer values are rejected
+Permission Groups: Special characters, Unicode and script content in the name and description are stored and displayed as plain text
+Permission Groups: New group appears as a new column with 0 of 71 permissions
+Permission Groups: Cancel and the close icon dismiss the dialog without creating a group
+Permission Groups: Pressing Enter in the dialog submits it once, with no duplicate group
+Permission Groups: Create Group shows an error message when the request fails
+Permission Groups: Creating a group is recorded in Security Audit Logs
+Permission Groups: Assign and Remove Permissions
+Permission Groups: Checking a permission adds it to the group and updates the count
+Permission Groups: Unchecking a permission removes it from the group and updates the count
+Permission Groups: Changes persist after the page is refreshed
+Permission Groups: Permissions can be assigned in each scope (Global, Project, User)
+Permission Groups: Scope level of a group is determined automatically from the permissions assigned
+Permission Groups: Scope level is updated when permissions of a different scope are added or removed
+Permission Groups: Group with a combination of scopes is handled according to the design
+Permission Groups: Category-level select/deselect all applies to every permission in that category (if supported)
+Permission Groups: Changes made on one group do not alter other groups
+Permission Groups: Saving shows a confirmation, and a failed save shows an error without losing the state of the matrix
+Permission Groups: Permission changes are recorded in Security Audit Logs with the group, permission, actor and time
+Permission Groups: Edit Group
+Permission Groups: Edit icon opens the edit form with the current name and description
+Permission Groups: Group name can be updated
+Permission Groups: Group description can be updated
+Permission Groups: Name change to an existing group name is rejected
+Permission Groups: Empty name is rejected
+Permission Groups: Updated name appears in the matrix, the Add Permission Group dialog and the Platform Management user details
+Permission Groups: Cancelling the edit keeps the original values
+Permission Groups: Editing a group is recorded in Security Audit Logs
+Permission Groups: Duplicate Group
+Permission Groups: Duplicate icon creates a copy of the group with the same permissions
+Permission Groups: Duplicated group gets a unique name or prompts for a name
+Permission Groups: Duplicate has the same permission count as the original
+Permission Groups: Changing the duplicate does not alter the original
+Permission Groups: Users assigned to the original are not assigned to the duplicate
+Permission Groups: Duplicating a system group creates a custom (non-system) group
+Permission Groups: Duplicating a group is recorded in Security Audit Logs
+Permission Groups: Delete Group
+Permission Groups: Delete icon removes a custom group
+Permission Groups: Confirmation is requested before a group is deleted
+Permission Groups: Cancelling the confirmation keeps the group
+Permission Groups: Deleted group disappears from the matrix and from the Add Permission Group dialog
+Permission Groups: Deleting a group that has users assigned is blocked or warns about the impact, according to the design
+Permission Groups: Users lose the permissions of a deleted group
+Permission Groups: System groups and the Default group cannot be deleted
+Permission Groups: Deleting a group is recorded in Security Audit Logs
+Permission Groups: Add Group Column
+Permission Groups: "+ Add group" opens the Create Permission Group dialog
+Permission Groups: Many custom groups are displayed with horizontal scrolling and the permission names stay visible
+Permission Groups: Group columns remain aligned with the permission rows while scrolling
+Permission Groups: Export CSV
+Permission Groups: Export CSV downloads a valid CSV file
+Permission Groups: CSV file name is meaningful and includes the export date
+Permission Groups: CSV contains every permission with its scope, category, name and description
+Permission Groups: CSV contains a column for every group, including custom groups
+Permission Groups: CSV values for each group and permission match the checkboxes in the UI
+Permission Groups: CSV permission counts per group match the counts shown in the column headers
+Permission Groups: CSV reflects the current state after groups have been added, edited or deleted
+Permission Groups: CSV escapes commas, quotes and line breaks in names and descriptions
+Permission Groups: CSV neutralizes values starting with =, +, - or @ to prevent formula injection
+Permission Groups: CSV opens correctly in Excel with non-ASCII characters displayed properly
+Permission Groups: CSV export is not available to users without the permission to read permission groups
+Permission Groups: Assignment and Inheritance
+Permission Groups: User assigned a role is automatically added to the corresponding permission group
+Permission Groups: User with several groups receives the combined (cumulative) permissions
+Permission Groups: A user can have different groups in different projects, such as Project Administrator in one and Project User in another
+Permission Groups: Permissions of a custom group apply to the users assigned to it
+Permission Groups: Adding a permission to a group applies to its users without requiring a new login
+Permission Groups: Removing a permission from a group removes it from its users without requiring a new login
+Permission Groups: Group with 0 permissions gives the user no access
+Permission Groups: Custom group appears in the Add Permission Group dialog in Platform Management according to its scope
+Permission Groups: Users in a group can be viewed (if supported)
+Permission Groups: Permission history can be viewed (if supported)
+Permission Groups: Permission Enforcement
+Permission Groups: Project Administrator can create, edit and soft-delete only assigned projects
+Permission Groups: Project Administrator can create teams, assign users, and configure repositories, webhooks and callouts in assigned projects
+Permission Groups: Project Administrator cannot access unassigned projects
+Permission Groups: Project User can create and edit work items, storylines, directors and actors in assigned teams
+Permission Groups: Project User can upload files, execute work items and view execution results in assigned teams
+Permission Groups: Project User cannot manage users, teams, projects or integrations
+Permission Groups: Project Read-Only can view work items, storylines, directors, actors, execution results and team members in assigned teams
+Permission Groups: Project Read-Only cannot create, edit, delete, execute or upload anything
+Permission Groups: Global Administrator can access all projects, users, teams, audit logs, integrations and Platform Management
+Permission Groups: Global Standard user can approve storylines at global scope but cannot access Platform Management
+Permission Groups: Team-scoped resources (work items, storylines, directors, actors) are only accessible in assigned teams
+Permission Groups: Project-scoped resources (repositories, teams, webhooks, callouts) are accessible across the whole project to Project Administrators
+Permission Groups: Global resources (users, projects, platform settings) are only accessible to Global Administrators
+Permission Groups: Model Management permissions (create, delete, view and update models) control access to the model configuration pages
+Permission Groups: Permission Management permissions (create, delete, read and update permission groups) control access to this page and its actions
+Permission Groups: Users and Authentication permissions control access to user and authentication management
+Permission Groups: Enforcement is applied by the server when the API is called directly, not just hidden in the UI
+Permission Groups: Validation and Security
+Permission Groups: Project Administrator and lower roles cannot create, edit or delete permission groups through the API
+Permission Groups: User cannot grant themselves additional permissions by editing a group they belong to
+Permission Groups: Last group with the permission to manage permission groups cannot be removed in a way that locks everyone out
+Permission Groups: Group and permission IDs cannot be tampered with in requests to modify other groups
+Permission Groups: Two administrators editing the same group at the same time end in a consistent state
+Permission Groups: Double-clicking a checkbox or a button does not create duplicate requests or inconsistent state
+Permission Groups: Failed save does not leave the UI showing permissions that were not saved
+Permission Groups: Cross-Feature
+Permission Groups: Group changes are reflected in Platform Management user details and role labels
+Permission Groups: Group changes are reflected on the "Your Permissions" page for the affected users
+Permission Groups: All create, edit, duplicate, delete and permission changes appear in Security Audit Logs
+Permission Groups: Navigation menu items and buttons are shown or hidden according to the permissions of the user's groups
